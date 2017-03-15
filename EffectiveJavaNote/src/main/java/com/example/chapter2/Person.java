@@ -1,4 +1,4 @@
-package com.example;
+package com.example.chapter2;
 
 import java.util.Calendar;
 import java.util.Date;
