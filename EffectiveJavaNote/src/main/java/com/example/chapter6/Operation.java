@@ -7,31 +7,35 @@ package com.example.chapter6;
  */
 
 // @formatter:off
-public enum Operation {
+public enum Operation implements IOperation{
     PLUS {
-        @Override double apply(double x, double y) {
+        @Override public double apply(double x, double y) {
             return x + y;
         }
     },
     MINUS {
-        @Override double apply(double x, double y) {
+        @Override public double apply(double x, double y) {
             return x - y;
         }
     },
     TIMES {
-        @Override double apply(double x, double y) {
+        @Override public double apply(double x, double y) {
             return x * y;
         }
     },
     DIVIDE {
-        @Override double apply(double x, double y) {
+        @Override public double apply(double x, double y) {
             return x / y;
         }
     };
 
-    abstract double apply(double x, double y);
-
     @Override public String toString() {
         return super.toString();
-    }}
+    }
+
+    private static <T extends Operation> void test(Class<T> tClass,double x,double y){
+
+    }
+
+}
 // @formatter:on
