@@ -17,4 +17,5 @@ public class TextEnumSetStyle {
     }
 
     //text.applyStyles(EnumSet.of(Style.BOLD,Style.ITALIC));
+
 }
