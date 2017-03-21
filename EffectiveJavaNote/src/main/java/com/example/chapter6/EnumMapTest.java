@@ -14,6 +14,7 @@ public class EnumMapTest {
 
     Map<Type, String> map = new EnumMap<Type, String>(Type.class);
 
+    @MyAnnotation({"1","2"})
     private void a() {
         map.put(Type.ONE, "one");
     }

@@ -13,7 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(value = RetentionPolicy.SOURCE)
 public @interface MyAnnotation {
     //Integer id() default 1;
-    int id();
-    String value() default "";
+    int id() default 1;
+    String[] value() default "";
 
 }

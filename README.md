@@ -1,10 +1,8 @@
 # LearnTechDemo
 Learn sth in Java, to be advanced.
 
-## EffectiveJava
-EffectiveJava笔记
+包含：
 
-
-## DesignPattern
-设计模式
-
+- EffectiveJava笔记
+- DesignPattern 设计模式
+- ConcurrentProgramming 并发编程
