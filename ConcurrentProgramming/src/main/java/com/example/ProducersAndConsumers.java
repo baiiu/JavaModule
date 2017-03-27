@@ -6,6 +6,4 @@ package com.example;
  * description: 多生产者多消费者
  */
 public class ProducersAndConsumers {
-
-
 }
