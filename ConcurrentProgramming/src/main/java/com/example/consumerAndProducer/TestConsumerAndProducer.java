@@ -8,17 +8,22 @@ package com.example.consumerAndProducer;
 public class TestConsumerAndProducer {
 
     public static void main(String[] args) {
-        Resource resource = new Resource(100);
+        Resource resource = new Resource();
 
         Consumer consumer = new Consumer(resource);
         Producer producer = new Producer(resource);
 
-        Thread consumerThread = new Thread(consumer, "消费者");
-        Thread producerThread = new Thread(producer, "生产者");
+        Thread consumerThread1 = new Thread(consumer, "1号消费");
+        Thread consumerThread2 = new Thread(consumer, "2号消费");
 
-        consumerThread.start();
-        producerThread.start();
+        Thread producerThread1 = new Thread(producer, "1号生产");
+        Thread producerThread2 = new Thread(producer, "2号生产");
 
+        consumerThread1.start();
+        consumerThread2.start();
+
+        producerThread1.start();
+        producerThread2.start();
     }
 
 }

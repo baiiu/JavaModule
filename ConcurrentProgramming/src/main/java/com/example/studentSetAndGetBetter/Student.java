@@ -36,6 +36,12 @@ class Student {
             return this;
         }
 
+        try {
+            this.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 
