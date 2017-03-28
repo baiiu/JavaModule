@@ -26,9 +26,7 @@ class SellingRunnable implements Runnable {
 
     private /*volatile*/ int ticket = 100;
 
-    //AtomicInteger，可用使用
-
-    //private volatile AtomicInteger ticket = new AtomicInteger(100);
+    //private volatile AtomicInteger ticket = new AtomicInteger(100);//不起作用，保证原子性，但并不同步
 
     @Override public void run() {
 
@@ -47,7 +45,7 @@ class SellingRunnable implements Runnable {
 
                 System.out.println(Thread.currentThread().getName() + " --> " + ticket);
 
-                ticket--; //这是一个非原子操作，不能放在第一句
+                --ticket; //这是一个非原子操作，不能放在第一句
             }
         }
 

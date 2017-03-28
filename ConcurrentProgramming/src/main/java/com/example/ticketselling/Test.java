@@ -3,9 +3,8 @@ package com.example.ticketselling;
 /**
  * author: baiiu
  * date: on 17/3/26 12:47
- * description:
+ * description: 多线程同步问题： 多个线程共用一把锁
  */
-
 public class Test {
 
     public static void main(String[] args) {
