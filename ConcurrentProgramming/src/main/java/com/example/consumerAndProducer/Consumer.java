@@ -18,19 +18,24 @@ class Consumer implements Runnable {
         while (true) {
 
             synchronized (resource) {
-
-                int consume = resource.consume();
-                if (consume == 0) {
-                    //消费完了，去生产
-
+                if (!resource.flag) {
+                    //没生产好，就等待
                     try {
                         resource.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+
                 }
 
+                //生产好了，就消费
+                int consume = resource.consume();
                 System.out.println(Thread.currentThread().getName() + " --> " + consume);
+
+                if (consume == 0) {
+                    resource.flag = false; //消费完了，去生产
+                    resource.notify();
+                }
 
             }
         }

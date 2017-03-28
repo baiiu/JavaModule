@@ -8,6 +8,7 @@ package com.example.consumerAndProducer;
 class Resource {
 
     private int count;
+    boolean flag; //表示生产好了么
 
     Resource(int count) {
         this.count = count;

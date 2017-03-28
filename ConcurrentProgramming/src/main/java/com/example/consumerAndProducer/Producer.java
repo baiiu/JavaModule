@@ -19,9 +19,8 @@ class Producer implements Runnable {
 
             synchronized (resource) {
 
-                int produce = resource.produce();
-                if (produce > 100) {
-                    //不能生产大于100个
+                //生产好了，就等待消费
+                if (resource.flag) {
                     try {
                         resource.wait();
                     } catch (InterruptedException e) {
@@ -29,7 +28,15 @@ class Producer implements Runnable {
                     }
                 }
 
+                //没生产好，持续生产
+                int produce = resource.produce();
                 System.out.println(Thread.currentThread().getName() + " --> " + produce);
+
+                if (produce > 100) {
+                    resource.flag = true;
+                    resource.notify();
+                }
+
             }
 
         }
