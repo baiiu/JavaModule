@@ -28,7 +28,8 @@ class SellingRunnable implements Runnable {
 
     //private volatile AtomicInteger ticket = new AtomicInteger(100);//不起作用，保证原子性，但并不同步
 
-    @Override public void run() {
+    @Override
+    public void run() {
 
         synchronized (SellingRunnable.class) {
 
