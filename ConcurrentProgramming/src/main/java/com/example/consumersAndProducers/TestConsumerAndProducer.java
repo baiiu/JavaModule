@@ -1,4 +1,4 @@
-package com.example.consumerAndProducer;
+package com.example.consumersAndProducers;
 
 /**
  * author: baiiu
@@ -13,11 +13,11 @@ public class TestConsumerAndProducer {
         Consumer consumer = new Consumer(resource);
         Producer producer = new Producer(resource);
 
-        Thread consumerThread1 = new Thread(consumer, "1号消费");
-        Thread consumerThread2 = new Thread(consumer, "2号消费");
+        Thread consumerThread1 = new Thread(consumer);
+        Thread consumerThread2 = new Thread(consumer);
 
-        Thread producerThread1 = new Thread(producer, "1号生产");
-        Thread producerThread2 = new Thread(producer, "2号生产");
+        Thread producerThread1 = new Thread(producer);
+        Thread producerThread2 = new Thread(producer);
 
         consumerThread1.start();
         consumerThread2.start();

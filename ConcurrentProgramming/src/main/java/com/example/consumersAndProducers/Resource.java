@@ -1,4 +1,4 @@
-package com.example.consumerAndProducer;
+package com.example.consumersAndProducers;
 
 /**
  * auther: baiiu
@@ -11,13 +11,12 @@ package com.example.consumerAndProducer;
  */
 class Resource {
 
-    private String name;
     private int count;
 
     private boolean flag;//生产好了么
 
-    synchronized void produce(String name) {
-        while (flag) {
+    synchronized void produce() {
+        while (flag) { //用while循环，唤醒本方线程时再次判断标记，不会往下走
             //生产好了，等待消费
             try {
                 this.wait();
@@ -26,18 +25,17 @@ class Resource {
             }
         }
 
-        this.name = name + count;
         count++;
 
-        System.out.println(Thread.currentThread().getName() + "--> " + this.name);
+        System.out.println(Thread.currentThread().getName() + "生产--> " + this.count);
         flag = true;//生产好了
-        this.notifyAll();
+        this.notifyAll();//避免只唤醒本方线程，造成所有本方线程进入wait状态
 
     }
 
     synchronized void consumer() {
         while (!flag) {
-
+            //没生产好，等待生产
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -46,7 +44,7 @@ class Resource {
         }
 
         //生产好了，消费
-        System.out.println(Thread.currentThread().getName() + "----> " + this.name);
+        System.out.println(Thread.currentThread().getName() + "消费---> " + this.count);
         flag = false;
         this.notifyAll();
 

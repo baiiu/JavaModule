@@ -1,4 +1,4 @@
-package com.example.consumerAndProducer;
+package com.example.consumersAndProducers;
 
 /**
  * auther: baiiu
@@ -15,7 +15,7 @@ class Producer implements Runnable {
     @Override
     public void run() {
         while (true) {
-            r.produce("烤鸭");
+            r.produce();
         }
     }
 }
