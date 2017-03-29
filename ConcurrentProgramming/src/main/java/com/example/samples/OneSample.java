@@ -10,13 +10,23 @@ package com.example.samples;
  */
 public class OneSample {
 
-
     public static void main(String[] args) {
-        PrintCount r = new PrintCount();
+        final PrintCount r = new PrintCount();
 
-        new Thread(r).start();
-        new Thread(r).start();
-        new Thread(r).start();
+        new Thread() {
+            @Override
+            public void run() {
+                r.print123();
+                r.print789();
+            }
+        }.start();
+
+        new Thread() {
+            @Override
+            public void run() {
+                r.print456();
+            }
+        }.start();
 
     }
 

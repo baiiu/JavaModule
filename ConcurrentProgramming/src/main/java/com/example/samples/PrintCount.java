@@ -10,23 +10,63 @@ import java.util.concurrent.locks.ReentrantLock;
  * description:
  */
 class PrintCount {
-    private int count = 0;
+    private int count = 1;
 
     private Lock lock = new ReentrantLock();
     private Condition reachThreeCondition = lock.newCondition();//到3了么
     private Condition reachSixCondition = lock.newCondition();//到6了么
 
-    void print() {
+    void print123() {
         lock.lock();
 
         try {
             while (count <= 3) {
-                ++count;
                 System.out.println(Thread.currentThread().getName() + " --> " + count);
+                ++count;
             }
 
-            reachThreeCondition.await();
+            reachThreeCondition.signal();
+        } finally {
+            lock.unlock();
+        }
 
+    }
+
+    void print789() {
+        lock.lock();
+
+        try {
+//            while (count <= 6) {
+            reachSixCondition.await();
+//            }
+
+            while (count <= 9) {
+                System.out.println(Thread.currentThread().getName() + " --> " + count);
+                ++count;
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
+    }
+
+    void print456() {
+        lock.lock();
+
+        try {
+            while (count <= 3) {
+                reachThreeCondition.await();
+            }
+
+            while (count <= 6) {
+                System.out.println(Thread.currentThread().getName() + " --> " + count);
+                ++count;
+            }
+
+            reachSixCondition.signal();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
