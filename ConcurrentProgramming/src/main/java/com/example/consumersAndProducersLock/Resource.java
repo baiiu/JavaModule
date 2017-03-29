@@ -16,8 +16,12 @@ class Resource {
 
     private Lock mLock = new ReentrantLock();
     //    private Condition mCondition = mLock.newCondition();
-    private Condition condition_con = mLock.newCondition();
-    private Condition condition_pro = mLock.newCondition();
+
+    /*
+        一个锁上有多个监视器，不同的监视器监视不同的线程，控制不同的线程，但共享着一把锁
+     */
+    private Condition condition_con = mLock.newCondition();//控制消费者线程
+    private Condition condition_pro = mLock.newCondition();//控制生产者线程
 
     void produce() {
         mLock.lock();
