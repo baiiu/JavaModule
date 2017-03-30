@@ -33,9 +33,12 @@ class Buffer {
                 return;
             }
 
+
             array[putPtr] = o;
-//            takePtr = putPtr;//这句话怎么会这么写？？？
-            ++putPtr;
+            if (++putPtr == array.length) {
+                putPtr = 0;
+            }
+
             ++count;
             condition_take.signal();
 
@@ -55,8 +58,10 @@ class Buffer {
             }
 
             Object o = array[takePtr];
-//            putPtr = takePtr;
-            ++takePtr;
+            if (++takePtr == array.length) {
+                takePtr = 0;
+            }
+
             --count;
             condition_put.signal();
 
