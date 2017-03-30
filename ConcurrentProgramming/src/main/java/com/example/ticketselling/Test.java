@@ -9,15 +9,12 @@ public class Test {
 
     public static void main(String[] args) {
 
-        SellingRunnable runnable = new SellingRunnable();
+//      Runnable runnable = new SellingRunnable();
+        Runnable runnable = new SellingRunnableLock();
 
-        Thread thread1 = new Thread(runnable);
-        Thread thread2 = new Thread(runnable);
-        Thread thread3 = new Thread(runnable);
-
-        thread1.setName("窗口1");
-        thread2.setName("窗口2");
-        thread3.setName("窗口3");
+        Thread thread1 = new Thread(runnable, "窗口1");
+        Thread thread2 = new Thread(runnable, "窗口2");
+        Thread thread3 = new Thread(runnable, "窗口3");
 
         thread1.start();
         thread2.start();

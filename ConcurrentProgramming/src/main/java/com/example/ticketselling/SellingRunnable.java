@@ -31,9 +31,10 @@ class SellingRunnable implements Runnable {
     @Override
     public void run() {
 
-        synchronized (SellingRunnable.class) {
+        while (true) {
 
-            while (true) {
+            synchronized (this) {
+
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
@@ -48,6 +49,7 @@ class SellingRunnable implements Runnable {
 
                 --ticket; //这是一个非原子操作，不能放在第一句
             }
+
         }
 
     }
