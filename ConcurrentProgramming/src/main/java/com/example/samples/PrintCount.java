@@ -30,11 +30,7 @@ class PrintCount {
             lock.unlock();
         }
 
-    }
-
-    void print789() {
         lock.lock();
-
         try {
 //            while (count <= 6) {
             reachSixCondition.await();
@@ -52,6 +48,27 @@ class PrintCount {
         }
 
     }
+
+//    void print789() {
+//        lock.lock();
+//
+//        try {
+////            while (count <= 6) {
+//            reachSixCondition.await();
+////            }
+//
+//            while (count <= 9) {
+//                System.out.println(Thread.currentThread().getName() + " --> " + count);
+//                ++count;
+//            }
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } finally {
+//            lock.unlock();
+//        }
+//
+//    }
 
     void print456() {
         lock.lock();

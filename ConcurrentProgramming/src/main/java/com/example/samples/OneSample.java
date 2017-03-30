@@ -11,13 +11,30 @@ package com.example.samples;
 public class OneSample {
 
     public static void main(String[] args) {
-        final PrintCount r = new PrintCount();
+//        final PrintCount r = new PrintCount();
+        final PrintCountMore r = new PrintCountMore();
 
         new Thread() {
             @Override
             public void run() {
                 r.print123();
-                r.print789();
+//                r.print789();
+            }
+        }.start();
+
+        new Thread() {
+            @Override
+            public void run() {
+                r.print123();
+//                r.print789();
+            }
+        }.start();
+
+
+        new Thread() {
+            @Override
+            public void run() {
+                r.print456();
             }
         }.start();
 
@@ -27,6 +44,7 @@ public class OneSample {
                 r.print456();
             }
         }.start();
+
 
     }
 
