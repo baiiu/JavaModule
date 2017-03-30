@@ -8,6 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * auther: baiiu
  * time: 17/3/29 29 07:45
  * description:
+ * <p>
+ * [Lock Android Condition Samples](http://outofmemory.cn/java/java.util.concurrent/lock-reentrantlock-condition)
  */
 class PrintCount {
     private int count = 1;
