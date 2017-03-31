@@ -8,10 +8,10 @@ package com.example.deadlock;
 public class TestDeadLock {
 
     public static void main(String[] args) {
-        Thread thread = new Thread(new DeadLockRunnable(false));
-        Thread thread1 = new Thread(new DeadLockRunnable(true));
+        Thread t1 = new Thread(new DeadLockRunnable(false));
+        Thread t2 = new Thread(new DeadLockRunnable(true));
 
-        thread.start();
-        thread1.start();
+        t1.start();
+        t2.start();
     }
 }
