@@ -11,8 +11,8 @@ package com.example.samples;
 public class OneSample {
 
     public static void main(String[] args) {
-//        final PrintCount r = new PrintCount();
-        final PrintCountMore r = new PrintCountMore();
+        final PrintCount r = new PrintCount();
+//        final PrintCountMore r = new PrintCountMore();
 
         new Thread() {
             @Override
