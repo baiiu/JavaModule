@@ -6,3 +6,4 @@ Learn sth in Java, to be advanced.
 - EffectiveJava笔记
 - DesignPattern 设计模式
 - ConcurrentProgramming 并发编程
+- 深入理解Java虚拟机
