@@ -9,9 +9,9 @@ public class Test {
 
     public static void main(String[] args) {
 
-//      Runnable runnable = new SellingRunnable();
+        Runnable runnable = new SellingRunnable();
 //        Runnable runnable = new SellingRunnableLock();
-        Runnable runnable = new SellingRunnableAtomic();
+//        Runnable runnable = new SellingRunnableAtomic();
 
         Thread thread1 = new Thread(runnable, "窗口1");
         Thread thread2 = new Thread(runnable, "窗口2");
@@ -20,6 +20,8 @@ public class Test {
         thread1.start();
         thread2.start();
         thread3.start();
+
+
     }
 
 }
