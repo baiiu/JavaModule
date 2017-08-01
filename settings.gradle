@@ -1,4 +1,4 @@
-include ':EffectiveJavaNote', ':JvmResearch'
+include ':EffectiveJavaNote', ':JvmResearch', ':charsettest'
 
 include ':ConcurrentProgramming'
 
