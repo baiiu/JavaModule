@@ -14,8 +14,6 @@ import java.io.InputStream;
 public class MyClassLoader extends ClassLoader {
 
     private String path = MyClassLoader.getSystemClassLoader().getResource("").getPath();
-    ;
-
 
     @Override
     public Class<?> loadClass(String name) throws ClassNotFoundException {

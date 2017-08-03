@@ -1,5 +1,7 @@
 package com.example;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -29,6 +31,55 @@ public class TestCharset {
          */
         String s = "{\"code\": 0,\"data\":[\"1\",\"'sss'\",\"%7b%22code%22%3a%22%27a%27%22%7d\"],\"msg\": \"操作成功\"}";
         System.out.println(s);
+
+        for (int i = 0; i < 2; ++i) {
+            s = URLEncoder.encode(s);
+        }
+
+
+//        for (int i = 0; i < 10; ++i) {
+//            try {
+//                parse = JSON.parse(s);
+//                break;
+//            } catch (Exception e) {
+//                s = URLDecoder.decode(s);
+//                System.out.println(e.toString());
+//            }
+//        }
+//        if (parse == null) {
+//            System.out.println("error");
+//        }
+//
+//        System.out.println(String.valueOf(parse));
+
+        Object parse = null;
+        for (int i = 0; i < 5; i++) {
+            s = URLDecoder.decode(s);
+            try {
+                parse = JSON.parse(s);
+                break;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+        }
+        if (parse == null) {
+            System.out.println("error");
+        }
+        System.out.println(String.valueOf(parse));
+
+
+//        do {
+//            try {
+//                parse = JSON.parse(s);
+//                break;
+//            } catch (Exception e) {
+//                s = URLDecoder.decode(s);
+//            }
+//
+//        } while (true);
+    }
+
+    private static void test(String s) {
 
         System.out.println("--------------------------");
 
