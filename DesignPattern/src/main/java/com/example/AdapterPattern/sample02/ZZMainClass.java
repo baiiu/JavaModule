@@ -5,7 +5,7 @@ package com.example.AdapterPattern.sample02;
  * date: on 16/7/20 17:54
  * description:
  */
-public class ZZMainClass {
+class ZZMainClass {
     public static void main(String[] args) {
         //拿了个中国插座去德国
         GBSocketInterface gbSocket = new GBSocket();

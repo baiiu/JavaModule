@@ -5,9 +5,9 @@ package com.example.AdapterPattern.sample01;
  * date: on 16/7/20 17:40
  * description: 已经存在的接口，这个接口需要配置
  */
-public class Adaptee {
+class Adaptee {
 
-    public void specificRequest() {
+    void specificRequest() {
         System.out.println("specificRequest");
     }
 

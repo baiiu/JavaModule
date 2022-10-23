@@ -11,7 +11,7 @@ public class Coordinates {
     private int width = 100;
     private int height = 100;
 
-    public Coordinates(int x, int y) {
+    Coordinates(int x, int y) {
         this.x = x;
         this.y = y;
     }
