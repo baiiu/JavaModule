@@ -7,7 +7,7 @@ import java.util.Random;
  * time: 18/12/21 21 08:21
  * description:
  */
-public class HasCoin implements State {
+public class HasCoin implements ICandyState {
     private CandyMachine mCandyMachine;
 
     public HasCoin(CandyMachine mCandyMachine) {
@@ -48,7 +48,7 @@ public class HasCoin implements State {
 
 
     @Override
-    public void printstate() {
+    public void printState() {
         System.out.println("***HasCoin***");
     }
 

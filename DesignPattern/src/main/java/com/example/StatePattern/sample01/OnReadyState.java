@@ -5,7 +5,7 @@ package com.example.StatePattern.sample01;
  * time: 18/12/21 21 08:22
  * description:
  */
-public class OnReadyState implements State {
+public class OnReadyState implements ICandyState {
     private CandyMachine mCandyMachine;
 
     OnReadyState(CandyMachine mCandyMachine) {
@@ -38,7 +38,7 @@ public class OnReadyState implements State {
     }
 
     @Override
-    public void printstate() {
+    public void printState() {
         System.out.println("***OnReadyState***");
     }
 

@@ -6,12 +6,12 @@ package com.example.StatePattern.sample01;
  * description:
  */
 class CandyMachine {
-    State mSoldOutState;
-    State mOnReadyState;
-    State mHasCoin;
-    State mSoldState;
-    State mWinnerState;
-    private State state;
+    ICandyState mSoldOutState;
+    ICandyState mOnReadyState;
+    ICandyState mHasCoin;
+    ICandyState mSoldState;
+    ICandyState mWinnerState;
+    private ICandyState state;
     private int count = 0;
 
     CandyMachine(int count) {
@@ -28,7 +28,7 @@ class CandyMachine {
         }
     }
 
-    void setState(State state) {
+    void setState(ICandyState state) {
         this.state = state;
     }
 
@@ -60,6 +60,6 @@ class CandyMachine {
     }
 
     void printstate() {
-        state.printstate();
+        state.printState();
     }
 }

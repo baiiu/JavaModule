@@ -8,6 +8,7 @@ package com.example.StatePattern.sample01;
  */
 class ZZMainClass {
     public static void main(String[] args) {
+        // CandyMachineBefore，之前的实现
         CandyMachine mCandyMachine = new CandyMachine(6);
 
         mCandyMachine.printstate();

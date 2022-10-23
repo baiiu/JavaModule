@@ -6,7 +6,7 @@ package com.example.StatePattern.sample01;
  * description:
  */
 
-public class WinnerState implements State {
+public class WinnerState implements ICandyState {
 
     private CandyMachine mCandyMachine;
 
@@ -47,7 +47,7 @@ public class WinnerState implements State {
     }
 
     @Override
-    public void printstate() {
+    public void printState() {
         System.out.println("***WinnerState***");
     }
 

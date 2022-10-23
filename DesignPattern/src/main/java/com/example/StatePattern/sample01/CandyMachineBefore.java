@@ -7,7 +7,7 @@ package com.example.StatePattern.sample01;
  * 1.存在大量的switch case 语句 当然可以用if else 也是一样的。
  * 2.可扩展性差，并且一旦要加入一种新的状态，那么就会要修改所有的switch case 不符合开闭原则
  * 3.没有采用面向对象的方式去封装
- *
+ * <p>
  * 可以采用状态模式
  */
 public class CandyMachineBefore {
@@ -65,7 +65,7 @@ public class CandyMachineBefore {
         }
     }
 
-    //转动曲柄
+    // 转动曲柄
     public void turnCrank() {
         switch (state) {
             case SoldOutState:
@@ -85,7 +85,7 @@ public class CandyMachineBefore {
         }
     }
 
-    //触发发放糖果行为
+    // 触发发放糖果行为
     private void dispense() {
         count = count - 1;
         System.out.println("a candy rolling out!");
@@ -97,7 +97,7 @@ public class CandyMachineBefore {
         }
     }
 
-    public void printstate() {
+    public void printState() {
         switch (state) {
             case SoldOutState:
                 System.out.println("***SoldOutState***");
